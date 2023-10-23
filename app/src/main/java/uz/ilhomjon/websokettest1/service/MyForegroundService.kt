@@ -33,6 +33,7 @@ class MyForegroundService : Service() {
     val runnable = object : Runnable{
         override fun run() {
             startForeground(1, MyData.createNotification(applicationContext, "Taxi narxi: ","sanoq $i"))
+            MyData.liveData.postValue(i.toString())
             i++
             handler.postDelayed(this, 1000)
         }

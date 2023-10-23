@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
                 ContextCompat.startForegroundService(this@MainActivity, serviceIntent)
             }
             btnStop.setOnClickListener {
-
+                val serviceIntent = Intent(this@MainActivity, MyForegroundService::class.java)
+                stopService(serviceIntent)
             }
         }
     }
